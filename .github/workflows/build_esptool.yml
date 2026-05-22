@@ -42,7 +42,7 @@ jobs:
           python ci/patch_dev_release.py --version ${{ github.ref_name }} esptool/__init__.py
           git diff
       - name: Build with PyInstaller
-        uses: espressif/python-binary-action@master
+        uses: espressif/python-binary-action@fix/armv7-cryptography-openssl
         with:
           scripts: 'esptool.py espefuse.py espsecure.py esp_rfc2217_server.py'
           output-dir: ./${{ env.DISTPATH }}
